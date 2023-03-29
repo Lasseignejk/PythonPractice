@@ -1,3 +1,5 @@
+# 100 days of python, day 15
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -32,7 +34,6 @@ resources = {
 profit = 0
 
 def checkResources(userOrder):
-    # ingredient is the keys of the dictionary
     for ingredient in MENU[userOrder]["ingredients"]:
         if MENU[userOrder]["ingredients"][ingredient] > resources[ingredient]:
             print(f"I'm sorry, there's not enough {ingredient}.")
@@ -72,19 +73,8 @@ userOrder = ""
 while keepServing: 
     while order == False:
         userOrder = input("What would you like? (espresso/latte/cappuccino):\n")
-        if userOrder == "espresso":
+        if userOrder == "espresso" or userOrder == "latte" or userOrder == "cappuccino" or userOrder == "report":
             order = True
-            
-        elif userOrder == "latte":
-            order = True
-            
-        elif userOrder == "cappuccino":
-            order = True
-            
-        elif userOrder == "off":
-            print("Goodbye!")
-            order = True  
-
         elif userOrder == "report":
             for item in resources: 
                 print(f"{item}: {resources[item]}")
@@ -93,6 +83,7 @@ while keepServing:
             print("Please enter a valid option.")
         
     if userOrder == "off":
+        print("Goodbye!")
         break
 
     if checkResources(userOrder) == 0:
