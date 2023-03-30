@@ -72,7 +72,7 @@ order = False
 userOrder = ""
 while keepServing: 
     while order == False:
-        userOrder = input("What would you like? (espresso/latte/cappuccino):\n")
+        userOrder = input("What would you like? (espresso/latte/cappuccinos):\n")
         if userOrder == "espresso" or userOrder == "latte" or userOrder == "cappuccino" or userOrder == "report":
             order = True
         elif userOrder == "report":
