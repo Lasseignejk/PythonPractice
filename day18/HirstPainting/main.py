@@ -1,5 +1,4 @@
-import colorgram
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, colormode
 from random import randint, choice
 
 tim = Turtle()
@@ -8,25 +7,30 @@ tim = Turtle()
 tim.shape("turtle")
 tim.color("chartreuse4")
 tim.speed(10)
+colormode(255)
 
-colorgram_colors = colorgram.extract('hirst.webp', 10)
-colors = []
 y_position = 0
+x_position = 0
 tim.sety(y_position)
-for color in colorgram_colors:
-    r = color.rgb.r
-    g = color.rgb.g
-    b = color.rgb.b
-    new_color = (r, g, b)
-    colors.append(new_color)
+colors = [(253, 252, 241), (238, 250, 244), (188, 19, 46), (244, 233, 64), (252, 232, 237),
+          (217, 239, 245), (195, 76, 34), (218, 66, 106), (13, 143, 89), (18, 125, 173)]
 
-for i in range(0, 11):
-    for j in range(0, 11):
+tim.setheading(225)
+tim.penup()
+tim.forward(300)
+tim.setheading(0)
+
+for i in range(0, 10):
+    for j in range(0, 10):
         random_color = choice(colors)
-        print(random_color)
         tim.dot(20, random_color)
+        tim.penup()
         tim.forward(50)
-    tim.sety(y_position + 50)
+    tim.setheading(90)
+    tim.forward(50)
+    tim.setheading(180)
+    tim.forward(500)
+    tim.setheading(0)
 
 
 screen = Screen()
