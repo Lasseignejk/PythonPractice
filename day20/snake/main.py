@@ -35,8 +35,8 @@ while game_running:
 
     # detect collision with wall
     if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -300:
-        game_running = False
-        scoreboard.game_over()
+        scoreboard.reset()
+        snake.reset()
 
     # detect collision with tail
     # look at all the segments of the snake body besides the head. slice from index 1 to the end.
@@ -44,7 +44,7 @@ while game_running:
     # array[::-1]  reverses the array. slice everything, but increment by -1, so backwards
     for segment in snake.snake_body[1:]:
         if snake.snake_head.distance(segment) < 10:
-            game_running = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()
