@@ -3,6 +3,8 @@
 # with open("weather_data.csv") as file:
 #     data = file.readlines()
 #     print(data)
+# The data printed looks like this: 
+    # ['day,temp,condition\n','Monday,12,Sunny\n','Tuesday,14,Rain\n'....]
 
 # import csv
 # with open("weather_data.csv") as data_file:
@@ -25,8 +27,6 @@ data = pandas.read_csv("weather_data.csv")
 
 temp_list = data["temp"].to_list()
 print(temp_list)
-
-# Entire table is stored in data, columns are known as 'series' in pandas
 
 # average = sum(temp_list) / len(temp_list)
 # print(data["temp"].mean())
