@@ -45,7 +45,6 @@ def remove_card():
     data_dict.remove(random_card)
     data_df = pandas.DataFrame(data_dict)
     data_df.to_csv("day31/flash_card_capstone_project/data/words_to_learn.csv", index=False)
-    print(len(data_dict))
     get_random_card()
     
 
